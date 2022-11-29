@@ -1,0 +1,214 @@
+/* VARS */
+:root {
+  --main-hue: 200;
+  --main-color: hsl(var(--main-hue), 90%, 60%);
+  --secondary-color: hsl(var(--main-hue), 90%, 60%);
+  --background-color: hsl(var(--main-hue), 40%, 7%);
+}
+
+/* GENERAL COMPONENTS */
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  background-color: #2F3640;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900 !important;
+  color: white;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+  top: 0px;
+}
+
+/* COLOR COMPONENTS */
+
+.main-color {
+  background-color: var(--main-color);
+}
+
+.secondary-color {
+  background-color: var(--secondary-color);
+}
+
+.background-color {
+  background-color: var(--background-color);
+}
+
+.waves-effect.waves-apple .waves-ripple {
+  background-color: rgba(156, 204, 101, 0.7);
+}
+
+.waves-effect.waves-pink .waves-ripple {
+  background-color: rgba(244, 123, 177, 0.7);
+}
+
+.bottom-gap {
+  margin-bottom: 4%;
+}
+
+.title-font {
+  font-family: 'Raleway', sans-serif;
+}
+
+.lato{
+  font-family: 'Lato', sans-serif;
+}
+
+.teko{
+  font-family: "Teko", sans-serif;
+}
+
+.share-tech-mono{
+  font-family: "Share Tech Mono", monospace;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+p{
+  text-align:center;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/* NAVBAR */
+
+.navbar-parent {
+  transition: background-color 0.1s;
+}
+
+
+.navbar-parent .nav-wrapper #welcome{
+  padding-left: 20px;
+  font-size: 2.75vw;
+}
+
+.navbar-parent .nav-wrapper #welcome .navbar-child{
+  z-index: 0 !important;
+}
+
+.dropdown-content{
+  transition: background-color 0.1s;
+}
+
+.dropdown-content li > a {
+  color: #fff;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  height: 350px;
+}
+
+.carousel .carousel-item{
+  width: 500px;
+}
+
+.carousel-selection {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.learn-more-button {
+  margin-top: 30px;
+}
+
+.home-project-card {
+  height: 400px;
+}
+
+
+/* PROJECT CONTENT */
+
+.project-content-1, .project-content-2 {
+  height: 1000px;
+}
+
+.project-content-1 .card-wrapper, .project-content-2 .card-wrapper {
+  margin-top:40px;
+}
+
+.project-content-1 .card-wrapper .card-changer, .project-content-2 .card-wrapper .card-changer {
+  height: 200px;
+}
+
+
+
+/* CONTACT CARDS */
+
+#about{
+  width:55%;
+  height:75%;
+}
+
+#about .card-image{
+  margin-top:10px;
+}
+
+/* FOOTER */ 
+
+footer.textarea{
+  resize: none;
+}
+
+.card-content p {
+  text-align: left !important;
+  text-justify: auto;
+}
+
+.card-content p a {
+  color: white;
+}
+
+.card-content {
+  height: 100% !important;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card {
+  margin: 0 !important;
+  border-radius: 10px !important;
+}
+
+.not-full {
+  margin-left: 0px !important;
+  width: 50% !important;
+}
+
+.full {
+  width: 100% !important;
+  margin-top:22.5px !important;
+}
+
+.project-content-1 {
+  height: 800px;
+}
+
+.project-content-2 {
+  height: 530px;
+}
