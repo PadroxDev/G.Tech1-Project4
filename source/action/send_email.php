@@ -6,6 +6,10 @@ $senderEmail = $_POST['email'];
 $content = $_POST['content'];
 $object = "Sender: ".$senderName." | Recontact email: ".$senderEmail;
 $headers = array('MIME-Version: 1.0','Content-type: text/html; charset=utf8');
+echo $senderName;
+echo $senderEmail;
+echo $object;
+echo $content;
 if (mail($destinationEmail, $object, $content, $headers)) {
 
 } else {

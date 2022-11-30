@@ -36,14 +36,13 @@ $carouselHashes = array(
 <head>
     <title>Bipolio | <?php echo $project['project_name'] ?> </title>
     <meta charset="UTF-8">
-    <link rel="icon" href="../img/website_icon.png" type="image/x-icon">
+    <link rel="icon" href="img/website_icon.png" type="image/x-icon">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:wght@900&display=swap" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css">
     <!--Import style.css-->
@@ -78,7 +77,7 @@ $carouselHashes = array(
                 } ?>
             </div>
         </div>
-        <div class="card-wrapper not-full col s12 m5 animate__animated animate__fadeInLeft wow">
+        <div class="card-wrapper not-full col s12 m5 animate__animated animate__zoomInLeft wow">
             <div class="card card-changer valign-wrapper secondary-color">
                 <div class="card-content black-text">
                     <h2 class="card-title"><?php echo $project['c1_title'] ?></h2>
@@ -86,7 +85,7 @@ $carouselHashes = array(
                 </div>
             </div>
         </div>
-        <div class="card-wrapper not-full col s12 m5 offset-m2 animate__animated animate__fadeInRight wow">
+        <div class="card-wrapper not-full col s12 m5 offset-m2 animate__animated animate__zoomInRight wow">
             <div class="card card-changer valign-wrapper secondary-color">
                 <div class="card-content black-text">
                     <h2 class="card-title"><?php echo $project['c2_title'] ?></h2>
@@ -105,7 +104,7 @@ $carouselHashes = array(
     </div>
 
     <div class="container row project-content-2">
-        <div class="card-wrapper not-full col s12 m6 animate__animated animate__rotateInDownLeft wow">
+        <div class="card-wrapper not-full col s12 m6 animate__animated animate__backInLeft wow">
             <div class="card card-changer valign-wrapper secondary-color">
                 <div class="card-content black-text">
                     <h2 class="card-title"> <?php echo $project['c3_title'] ?> </h2>
@@ -113,7 +112,7 @@ $carouselHashes = array(
                 </div>
             </div>
         </div>
-        <div class="card-wrapper not-full col s12 m6 offset-m6 animate__animated animate__rotateInDownRight wow">
+        <div class="card-wrapper not-full col s12 m6 offset-m6 animate__animated animate__backInRight wow">
             <div class="card card-changer valign-wrapper secondary-color">
                 <div class="card-content black-text">
                     <h2 class="card-title"> <?php echo $project['c4_title'] ?> </h2>
