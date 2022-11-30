@@ -4,13 +4,8 @@ var currentCode = ''
 
 var c = 0;
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function addKeyToCode(key) {
@@ -22,9 +17,9 @@ function addKeyToCode(key) {
 
 function goBRRRR() {
   c += 1;
-  const color = getRandomColor();
-  $('.navbar-parent').css('background-color', color);
-  $('.dropdown-content').css('background-color', color);
+  // $('.navbar-parent').css('background-color', color);
+  // $('.dropdown-content').css('background-color', color);
+  document.documentElement.style.setProperty('--main-hue', randomIntFromInterval(0, 360));
   $('#welcome').addClass(['animate__animated', 'animate__hinge']);
 
   if (c > 100) {

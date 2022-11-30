@@ -1,25 +1,30 @@
+<?php
+require "queries/get_all_projects.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 </head>
 <body>
+    
     <!-- Dropdowns Structure -->
 
     <ul id="projects-dropdown-1" class="dropdown-content main-color">
-        <li><a href="p-1_osu_website.php">osu! website</a></li>
-        <li class="divider"></li>
-        <li><a href="p-2_genshin_website.php">Genshin Impact website</a></li>
-        <li class="divider"></li>
-        <li><a href="p-3_star_shooting.php">Shooting Alliance</a></li>
+        <?php
+        foreach($projects as $proj) { ?>
+            <li><a href= <?php echo "project_page.php?id=".$proj['project_id'] ?> > <?php echo $proj['project_name'] ?> </a></li>
+            <?php if (end($projects) != $proj) { ?> <li class="divider"></li> <?php }
+        } ?>
     </ul>
 
     <ul id="projects-dropdown-2" class="dropdown-content main-color">
-        <li><a href="p-1_osu_website.php">osu! website</a></li>
-        <li class="divider"></li>
-        <li><a href="p-2_genshin_website.php">Genshin Impact website</a></li>
-        <li class="divider"></li>
-        <li><a href="p-3_star_shooting.php">Star Shooting Alliance</a></li>
+        <?php
+        foreach($projects as $proj) { ?>
+            <li><a href= <?php echo "components/project_page.php?id=".$proj['project_id'] ?> > <?php echo $proj['project_name'] ?> </a></li>
+            <?php if (end($projects) != $proj) { ?><li class="divider"></li> <?php }
+        } ?>
     </ul>
 
     <!-- Navigation: Large Screens -->
@@ -38,8 +43,9 @@
                 <i class="material-icons right">arrow_drop_down</i>
             </a>
             </li>
-            <li><a class="waves-effect waves-light" href="#about">About Us</a></li>
-            <li><a class="contact-button waves-effect waves-light modal-footer" href="#!">Contact</a></li>
+            <li><a class="waves-effect waves-light" href="index.php#about">About Us</a></li>
+            <li><a class="contact-button waves-effect waves-light modal-footer" href="#!">Contact</a></li>*
+            <li><a class="waves-effect waves-light" href="<?php require 'connect.php'?>"></a></li>
         </ul>
         </div>
     </nav>

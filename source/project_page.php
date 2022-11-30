@@ -15,8 +15,8 @@ parallax_path: the path of the parallax
 -->
 
 <?php
-require "ries/get_project.php";
-require "ries/get_carousel.php";
+require "queries/get_project.php";
+require "queries/get_carousel.php";
 $carouselHashes = array(
     1 => "#one!",
     2 => "#two!",
@@ -36,7 +36,7 @@ $carouselHashes = array(
 <head>
     <title>Bipolio | <?php echo $project['project_name'] ?> </title>
     <meta charset="UTF-8">
-    <link rel="icon" href="/website_icon.png" type="image/x-icon">
+    <link rel="icon" href="../img/website_icon.png" type="image/x-icon">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import Google Fonts-->
@@ -135,10 +135,10 @@ $carouselHashes = array(
     <?php require "components/footer.php"; ?>
 
     <!--JavaScript at end of body for optimized loading-->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/materialize.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

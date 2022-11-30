@@ -1,5 +1,5 @@
 <?php
-require_once "../cfg/config.php";
+require_once "cfg/config.php";
 $id = $_GET['id'];
 $sql = "SELECT * FROM carousel_image WHERE project_id=:id"; //votre requête SQL (vous savez faire maintenant héhé !)
 $bindedData=array(
