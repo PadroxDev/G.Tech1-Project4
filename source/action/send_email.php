@@ -11,8 +11,8 @@ echo $senderEmail;
 echo $object;
 echo $content;
 if (mail($destinationEmail, $object, $content, $headers)) {
-
+    echo "Your message has been sent succesfully ! Check your e-mail box for any answer."
 } else {
-    
+    echo "Your mail has not been sent successfully... Please try again."
 }
 ?>

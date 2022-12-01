@@ -21,65 +21,73 @@
 </head>
 
 <body>
-  <?php 
-  $title = "Welcome";
+  <?php
+  require "queries/get_all_projects_home_data.php";
+  require "queries/get_home_page.php";
+  
+
+  $title = $home_page['title'];
   require "components/navbar.php";
   ?>
 
   <!-- Page Title -->
 
-  <h1 class="center-align animate__animated animate__backInDown">Our Projects</h1>
+  <h1 class="center-align animate__animated animate__backInDown"> <?php echo $home_page['h1'] ?> </h1>
 
   <!-- Projects' Carousel -->
 
   <div class="container bottom-gap fall-protected">
     <div class="carousel fall-protected">
-      <a class="carousel-item fall-protected"><img src="img/osu_main_page.jpg" alt="Osu Website Screenshot"></a>
-      <a class="carousel-item fall-protected"><img src="img/genshin_main_page.jpg"
-          alt="Genshin Impact Website Screenshot"></a>
-      <a class="carousel-item fall-protected"><img src="img/star_shooting_alliance.jpg"
-          alt="Space Shooting Alliance Screenshot"></a>
+      <?php foreach($projects_home_data as $p_data) { ?>
+        <a class="carousel-item fall-protected"><img src= <?php echo $p_data['h_img'] ?> alt="Project Preview"></a>
+      <?php }; ?>
     </div>
   </div>
 
-  <!-- Project 1 -->
-
-  <div class="container bottom-gap fall-protected" id="details-0">
-    <div class="row carousel-selection fall-protected">
-      <h2 class="share-tech-mono bold underline col s12 animate__animated animate__backInLeft">
-        osu! Website
-      </h2>
-
-      <div class="row fall-protected">
-        <div class="col s12 m6 animate__animated animate__backInLeft fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content balck-text fall-protected">
-              <p>
-                A website guide about osu! made by Antoine's team.
-                Explore this website if you want to learn more about this awesome game!
-              </p>
+  <!-- Projects -->
+  
+  <?php
+  $i = 0;
+  foreach($projects_home_data as $p_data) { 
+    $i++; ?>
+    <div class="container bottom-gap fall-protected" id=<?php echo "details-".($i-1) ?>>
+      <div class="row carousel-selection fall-protected">
+        <h2 class="share-tech-mono bold underline col s12 animate__animated animate__backInLeft">
+          <?php echo $p_data['h_title'] ?>
+        </h2>
+  
+        <div class="row fall-protected">
+          <div class="col s12 m6 animate__animated animate__backInLeft fall-protected">
+            <div class="card white valign-wrapper home-project-card fall-protected">
+              <div class="card-content balck-text fall-protected">
+                <p>
+                  <?php echo $p_data['h_p1'] ?>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col s12 m6 animate__animated animate__backInRight fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content black-text fall-protected">
-              <p>
-                This is a fan-made website about osu! where you can learn what the game is about in the context of a
-                project of a one week duration for the Gaming Campus!
-              </p>
+          <div class="col s12 m6 animate__animated animate__backInRight fall-protected">
+            <div class="card white valign-wrapper home-project-card fall-protected">
+              <div class="card-content black-text fall-protected">
+                <p>
+                  <?php echo $p_data['h_p2'] ?>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="learn-more-button center-align fall-protected">
+        
+        <a class="animate__animated pulse waves-effect waves-light btn pink lighten-3" href=<?php 'project_page.php?id='.$i ?> ><i
+            class="material-icons left">blur_on</i>More Info</a>
+      </div>
     </div>
-    <div class="learn-more-button center-align fall-protected">
-      <a class="animate__animated pulse waves-effect waves-light pink lighten-3 btn" href="p-1_osu_website.php"><i
-          class="material-icons left">blur_on</i>More Info</a>
-    </div>
+  <?php } ?>
   </div>
 
-  <!-- Project 2 -->
+  <?php
+  /*
 
   <div class="container bottom-gap fall-protected" id="details-1">
     <div class="row carousel-selection fall-protected">
@@ -162,12 +170,14 @@
           class="material-icons left">blur_on</i>More Info</a>
     </div>
   </div>
+  */
+  ?>
 
   <!-- Parallax -->
 
   <div class="bottom-gap fall-protected">
     <div class="parallax-container fall-protected">
-      <div class="parallax fall-protected"><img class="fall-protected" src="img/systems-parallax.jpg"
+      <div class="parallax fall-protected"><img class="fall-protected" src= <?php echo $home_page['parallax'] ?> 
           alt="Bipolio Portfolio Systems"></div>
     </div>
   </div>
@@ -177,40 +187,38 @@
   <div class="row fall-protected" id="about">
     <div class="card col s12 m5 l5 card-easter-egg fall-protected">
       <div class="card-image waves-effect waves-block waves-light fall-protected">
-        <img class="activator vpic rickroll-left" src="img/vfovet.jpg" alt='Portfolio Vianney "Black Drift" FOVET'>
+        <img class="activator vpic rickroll-left" src= <?php echo $home_page['img_1'] ?> alt='Portfolio Vianney "Black Drift" FOVET'>
       </div>
       <div class="card-content fall-protected">
-        <span class="card-title activator grey-text text-darken-4">Vianney "Black Drift" FOVET<i
+        <span class="card-title activator grey-text text-darken-4"> <?php echo $home_page['name_1'] ?> <i
             class="material-icons right">build</i></span>
-        <p><a href="https://linktr.ee/black_drift" target="_blank" rel="nofollow">Linktree</a></p>
+        <p><a href= <?php echo $home_page['linktree_1'] ?> target="_blank" rel="nofollow">Linktree</a></p>
       </div>
       <div class="card-reveal fall-protected">
-        <span class="card-title grey-text text-darken-4">More about him :<i
+        <span class="card-title grey-text text-darken-4"> <?php echo $home_page['card_title1'] ?> <i
             class="material-icons right">close</i></span>
-        <p>A video-game development student in Gaming Campus Lyon. In 1st year in G.Tech Division, trying his best to
-          become even better during and after every project !<br>A 17 year-old boy, introvert, passionate, patient
-          and
-          quite kind :)
+        <p>
+          <?php echo $home_page['content_1'] ?> 
         </p>
-        <p><a href="https://linktr.ee/black_drift" target="_blank">Linktree</a></p>
+        <p><a href= <?php echo $home_page['linktree_1'] ?> target="_blank">Linktree</a></p>
       </div>
     </div>
     <div class="card col s12 m5 l5 offset-l2 offset-m2 card-easter-egg fall-protected">
       <div class="card-image waves-effect waves-block waves-light fall-protected">
-        <img class="activator vpic rickroll-right" src="img/avollet.jpg" alt="Antoine VOLLET">
+        <img class="activator vpic rickroll-right" src= <?php echo $home_page['img_2'] ?> alt="Antoine VOLLET">
       </div>
       <div class="card-content fall-protected">
-        <span class="card-title activator grey-text text-darken-4">Antoine "Padrox" VOLLET<i
+        <span class="card-title activator grey-text text-darken-4"> <?php echo $home_page['name_2'] ?><i
             class="material-icons right">build</i></span>
-        <p><a href="https://linktr.ee/padroxdev" target="_blank" rel="nofollow">Linktree</a></p>
+        <p><a href= <?php echo $home_page['linktree_2'] ?> target="_blank" rel="nofollow">Linktree</a></p>
       </div>
       <div class="card-reveal fall-protected">
-        <span class="card-title grey-text text-darken-4">More about him :<i
+        <span class="card-title grey-text text-darken-4"> <?php echo $home_page['card_title2'] ?> :<i
             class="material-icons right">close</i></span>
-        <p>Hey Hey 👋<br>I'm a eighteen years old french guy passionate by video-games since I was child. I'm a
-          first-year video-game development student at Gaming Campus Lyon. I'm a techo but still people say that I have
-          a buisness profile. Don't get mad at me ;))</p>
-        <p><a href="https://linktr.ee/padroxdev" target="_blank" rel="nofollow">Linktree</a></p>
+        <p>
+          <?php echo $home_page['content_2'] ?> 
+        </p>
+        <p><a href= <?php echo $home_page['linktree_2'] ?> target="_blank" rel="nofollow">Linktree</a></p>
       </div>
     </div>
   </div>

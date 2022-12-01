@@ -6,26 +6,6 @@
 <body>
     <!-- Footer/ -->
 
-  <footer class="fall-protected" id="contact">
-    <div id="modal1" class="modal bottom-sheet fall-protected">
-      <div class="modal-content fall-protected">
-        <form method="post" action="action/send_email.php">
-          <label class="valign-wrapper fall-protected"> <i class="small material-icons left fall-protected">perm_identity</i> First Name/Last Name</label>
-          <input class="fall-protected" type="text" placeholder="First Name/Last Name..." name="name"><br>
-          <label class="valign-wrapper fall-protected"> <i class="small material-icons left fall-protected">email</i> Your email </label>
-          <input class="fall-protected" type="text" placeholder="e-mail adress..." name="email"><br>
-          <label class="fall-protected valign-wrapper"> <i class="small material-icons left fall-protected">edit</i> What can we do for you ? </label>
-          <textarea class="materialize-textarea fall-protected" placeholder="Your message..." name="content"></textarea>
-          <button type="submit" value=> </button>
-        </form>
-      </div>
-      <div class="modal-footer fall-protected">
-        <button href="#!" class="modal-close waves-effect waves-blue btn-flat fall-protected"><i
-            class="material-icons left fall-protected">check_box</i>
-          Send</button>
-      </div>
-    </div>
-  </footer>
   <div class="footer-fixed fall-protected">
     <footer class="page-footer main-color fall-protected">
       <div class="container fall-protected">

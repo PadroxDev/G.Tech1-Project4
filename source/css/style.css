@@ -58,6 +58,10 @@ h2 {
   background-color: rgba(244, 123, 177, 0.7);
 }
 
+.white-text {
+  color: white;
+}
+
 .bottom-gap {
   margin-bottom: 4%;
 }
@@ -114,6 +118,10 @@ h2 {
   color: #fff;
 }
 
+.modal-content h4{
+  color:black;
+}
+
 /* CAROUSEL */
 
 .carousel {
@@ -154,7 +162,9 @@ h2 {
   height: 200px;
 }
 
-
+.resize-preview-image{
+  width: 150px;
+}
 
 /* CONTACT CARDS */
 
