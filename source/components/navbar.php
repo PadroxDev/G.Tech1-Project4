@@ -44,20 +44,17 @@ require "queries/get_all_projects.php";
             </a>
             </li>
             <li><a class="waves-effect waves-light" href="index.php#about">About Us</a></li>
-            <li><a class="contact-button waves-effect waves-light modal-footer" href="#contact">Contact</a></li>
+            <li><a class="waves-effect waves-light modal-trigger" href="#contact">Contact</a></li>
             <?php if (!isset($_SESSION['user'])) { ?>
             <li><a class="waves-effect waves-light modal-trigger" href="#signin">Sign in</a></li>
-            <?php };
-            //if (isset($_SESSION['user'])) { ?>
-            <!-- <li>
-                <form>
-                    <input type="submit" action="action/logout.php" value='Log out' />
-                </form>
-            </li> -->
-            <?php //};
-            if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin']==1) { ?>
+            <?php }else{ ?>
+            <li><a class="waves-effect waves-light" href="action/logout.php">Log out</a></li>
+            <?php }
+            if (isset($_SESSION['user']['admin']) && $_SESSION['user']['admin']==1 && basename($_SERVER['PHP_SELF']) != "admin_page.php") { ?>
             <li><a class="waves-effect waves-light" href="admin_page.php">Access to Admin panel</a></li>
-            <?php }; ?>
+            <?php
+            }
+            ?>
         </ul>
         </div>
     </nav>

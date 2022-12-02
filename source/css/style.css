@@ -58,8 +58,8 @@ h2 {
   background-color: rgba(244, 123, 177, 0.7);
 }
 
-.white-text {
-  color: white;
+.white-text, .white-text textarea {
+  color: white !important;
 }
 
 .bottom-gap {
@@ -221,3 +221,4 @@ footer.textarea{
 .project-content-2 {
   height: 530px;
 }
+

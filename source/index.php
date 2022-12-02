@@ -22,11 +22,13 @@
 
 <body>
   <?php
-  require "queries/get_all_projects_home_data.php";
+  require "queries/get_all_projects.php";
   require "queries/get_home_page.php";
   
-
   $title = $home_page['title'];
+  if(isset($_SESSION['user'])) {
+    $title = $home_page['title']." ".$_SESSION['user']['username'];
+  }
   require "components/navbar.php";
   ?>
 
@@ -38,7 +40,7 @@
 
   <div class="container bottom-gap fall-protected">
     <div class="carousel fall-protected">
-      <?php foreach($projects_home_data as $p_data) { ?>
+      <?php foreach($projects as $p_data) { ?>
         <a class="carousel-item fall-protected"><img src= <?php echo $p_data['h_img'] ?> alt="Project Preview"></a>
       <?php }; ?>
     </div>
@@ -48,7 +50,7 @@
   
   <?php
   $i = 0;
-  foreach($projects_home_data as $p_data) { 
+  foreach($projects as $p_data) { 
     $i++; ?>
     <div class="container bottom-gap fall-protected" id=<?php echo "details-".($i-1) ?>>
       <div class="row carousel-selection fall-protected">
@@ -78,100 +80,12 @@
         </div>
       </div>
       <div class="learn-more-button center-align fall-protected">
-        
-        <a class="animate__animated pulse waves-effect waves-light btn pink lighten-3" href=<?php 'project_page.php?id='.$i ?> ><i
+        <a style=<?php echo "background-color:".$p_data['h_button_color'] ?> class="animate__animated pulse waves-effect waves-light btn" href=<?php echo 'project_page.php?id='.$i ?> ><i
             class="material-icons left">blur_on</i>More Info</a>
       </div>
     </div>
   <?php } ?>
   </div>
-
-  <?php
-  /*
-
-  <div class="container bottom-gap fall-protected" id="details-1">
-    <div class="row carousel-selection fall-protected">
-      <h2 class="share-tech-mono bold underline col s12 animate__animated animate__backInLeft">
-        Genshin Impact Website
-      </h2>
-
-      <div class="row fall-protected">
-        <div class="col s12 m6 animate__animated animate__bounceInUp fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content balck-text fall-protected">
-              <p>
-                A Genshin Impact general site made by Black's team.
-                Explore the website if you want to learn more about this game!
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6 animate__animated animate__bounceInDown fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content black-text fall-protected">
-              <p>
-                The team for this project was a 2-people team :<br>- Vianney "Black Drift"<br>- Nattan<br>Both of them
-                are in
-                the same class, and were together for the project, Vianney was more in charge of the content while
-                Nattan was
-                more in charge of the form side, either
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="learn-more-button center-align fall-protected">
-      <a class=" waves-effect waves-light indigo darken-3 btn animate__animated pulse wow"
-        href="p-2_genshin_website.php"><i class="material-icons left">blur_on</i>More Info</a>
-    </div>
-  </div>
-
-  <!-- Project 3 -->
-
-  <div class="container bottom-gap fall-protected" id="details-2">
-    <div class="row carousel-selection fall-protected">
-      <h2 class="share-tech-mono bold underline col s12 animate__animated animate__backInLeft fall-protected">
-        Star Shooting Alliance
-      </h2>
-
-      <div class="row fall-protected">
-        <div class="col s12 m6 animate__animated animate__rollIn fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content balck-text fall-protected">
-              <p>
-                This game was made and published by Antoine for the Brackeys Game Jam 2022.2.
-                It was made using the Unity Game Engine.
-                Every assets come from an artist called @finalbossblues!
-                It's a space shooter where you have to fight against incoming enemies who are getting stronger each
-                fight.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6 animate__animated animate__rollIn fall-protected">
-          <div class="card white valign-wrapper home-project-card fall-protected">
-            <div class="card-content black-text fall-protected">
-              <p>
-                The game jam theme was "You're not alone", the idea is to earn gold by beating enemies and then you can
-                summon
-                allies to go fight together. Allies can provide passive and actives abilities to defeat stronger
-                enemies! The
-                game is available on my itch.io page: <a href="https://itch.io/search?q=PadroxDev" target="_blank"
-                  rel="nofollow">PadroxDev</a> ;)
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="learn-more-button center-align fall-protected">
-      <a class="animate__animated pulse waves-effect waves-light deep-purple btn" href="p-3_star_shooting.php"><i
-          class="material-icons left">blur_on</i>More Info</a>
-    </div>
-  </div>
-  */
-  ?>
 
   <!-- Parallax -->
 
